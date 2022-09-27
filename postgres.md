@@ -1,4 +1,4 @@
-# Ejecutar instrucciones PLSQL
+# Ejecutar instrucciones PSQL
 
 psql -U postgres -f "C:\MENSEST\crear_usuario_system.sql"
 
