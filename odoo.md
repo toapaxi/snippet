@@ -13,7 +13,7 @@ crear los archivos odoo-server y odoo.conf
 
 ### Crear una nueva Run/Debug Configurations
 Name: odoo-server
-Script Path:  /home/muerte/proyectos/ODOO_SRC_15
+Script Path:  /home/muerte/proyectos/ODOO_SRC_15/odoo-server
 Parameters:   -c /home/muerte/proyectos/ODOO_SRC_15/odoo.conf
 Working directory:  /home/muerte/proyectos/ODOO_SRC_15
 
