@@ -1,5 +1,10 @@
 # INSTALACION
 
+## Instalar python 3.9
+
+sudo apt install python3.9
+## Descargar 
+
 Descargar desde la carpeta src la ultima version
 https://nightly.odoo.com/15.0/nightly/
 
@@ -16,9 +21,30 @@ Lo demas por default
 
 
 ### Instalar requerimientos
+#### Actualizar Python
+pip install --upgrade pip
+pip install --upgrade wheel
+pip install --upgrade setuptools
+
+## INSTALAR DEPENDIENDO DE LA VERSION DE PYTHON
+sudo apt-get install python3.9-dev
+
+## BAJAR LA VERSION DE SEPTUPTOOLS SI APARECE EL ERROR DEPRECATED SETUP Y UTILICE BUILD
+pip install setuptools==58.2.0
+
+
+libssl-dev
 
 abrir el archivo requirements.txt, y procedemos a instalar
 
+#### Actualizar PIP
+python -m pip install --upgrade pip
+
+## AL EJECUTAR POR 1RA VEZ
+Salen horrores
+
+pip install werkzeug
+pip install psycopg2-binary
 
 
 # ARREGLAR ODOO
