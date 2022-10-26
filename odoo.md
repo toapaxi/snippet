@@ -62,3 +62,12 @@ select * from ir_model_fields where model_id = '616';
 delete from ir_model_fields where model_id = '616';
 
 delete from ir_model where id = '616';
+
+
+## BORRAR MODULOS TRUCHOS
+
+delete from public.ir_module_module
+where name like '%turnero_botate%'
+
+DELETE FROM public.ir_model_data
+where name like '%turnero_botate%'
