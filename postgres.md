@@ -9,3 +9,16 @@ AS TABLE view_aeronaves; --TABLA O VISTA A COPIAR
 
 ### AGREGAR PERMISOS A UN USUARIO
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO user;
+
+
+### CREATE COLLATION
+
+CREATE COLLATION [ IF NOT EXISTS ] name (
+    [ LOCALE = locale, ]
+    [ LC_COLLATE = lc_collate, ]
+    [ LC_CTYPE = lc_ctype, ]
+    [ PROVIDER = provider, ]
+    [ DETERMINISTIC = boolean, ]
+    [ VERSION = version ]
+)
+CREATE COLLATION [ IF NOT EXISTS ] name FROM existing_collation
