@@ -7,3 +7,6 @@ sudo find / -type d -printf '%s %p\n'| sort -nr | head -10
 
 ### Buscar Archivos mas pesados
 sudo find / -type f -printf '%s %p\n'| sort -nr | head -10
+
+### VER que puertos estan abiertos
+sudo lsof -i -P -n | grep LISTEN | grep IPv4
