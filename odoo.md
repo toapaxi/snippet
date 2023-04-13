@@ -47,16 +47,22 @@ pip install werkzeug
 pip install psycopg2-binary
 
 
-# ARREGLAR ODOO
+# ARREGLAR ODOO (FileNotFoundError: [Errno 2] No existe el archivo o el directorio:)
+## '/home/muerte/.local/share/Odoo/filestore/conaplas16/2f/2f7028932480cdcb927f83b0165d577669e620fa'
 
-SELECT id, name, description, res_model, res_field, res_id, company_id, type, url, public, access_token, db_datas, store_fname, file_size, checksum, mimetype, index_content, create_uid, create_date, write_uid, write_date, original_id
-	FROM public.ir_attachment
-	where store_fname like '%fdffc45cba0e31dd34423b54f06fd48e9824192c%'
-	
-	delete  from ir_attachment
-	where id >1
-	
-	 select * from ir_model where model  like '%transporte.tipo%';
+select * from ir_attachment
+WHERE
+store_fname LIKE '%b8f9001425cfd0ef0315797909281b912817643a%'
+
+Confirmamos la existencia de ese registro y lo borramos
+
+delete from ir_attachment
+WHERE
+store_fname LIKE '%b8f9001425cfd0ef0315797909281b912817643a%'
+
+
+select * from ir_model where model  like '%transporte.tipo%';
+
 select * from ir_model_fields where model_id = '616';
 
 delete from ir_model_fields where model_id = '616';
