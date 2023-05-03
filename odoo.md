@@ -60,7 +60,7 @@ delete from ir_attachment
 WHERE
 store_fname LIKE '%b8f9001425cfd0ef0315797909281b912817643a%'
 
-
+## ELIMINAR MODELOS Y CAMPOS DE LOS MODELOS EN LA BASE
 select * from ir_model where model  like '%transporte.tipo%';
 
 select * from ir_model_fields where model_id = '616';
