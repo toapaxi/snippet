@@ -18,3 +18,10 @@ En el menu de Usuario ingresar en User Setting --> SSH Keys se configura el TOKE
 1. En el campo key copiamos el item 5 anterior
 2. En el campo key coloque una descripcion de la PC que esta configurando.
 3. Dar clic en **Add key**
+
+
+# BORRAR CAMBIOS LOCALES Y QUEDARME SOLO CON LO DEL SERVIDOR
+
+1. git fetch
+
+2. git reset --hard origin/NOMBRE_RAMA
