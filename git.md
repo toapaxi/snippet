@@ -25,3 +25,9 @@ En el menu de Usuario ingresar en User Setting --> SSH Keys se configura el TOKE
 1. git fetch
 
 2. git reset --hard origin/NOMBRE_RAMA
+
+# CAMBIAR DE NOMBRE DE RAMA
+## Ingresar en la rama
+git checkout rama_actual
+## Cambiar nombre
+git branch -m nuevo_nombre
