@@ -77,3 +77,14 @@ where name like '%turnero_botate%'
 
 DELETE FROM public.ir_model_data
 where name like '%turnero_botate%'
+
+
+# BUSCAR CATEGORIAS Y GRUPOS DE USUARIOS
+SELECT *
+FROM ir_module_category
+WHERE to_json(name)::text LIKE '%nomina%';
+
+## Luego podemos buscar en la tabla res_groups
+SELECT * FROM res_groups
+WHERE category_id = 89
+to_json(name)::text LIKE '%Usuario%';
