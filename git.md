@@ -31,3 +31,6 @@ En el menu de Usuario ingresar en User Setting --> SSH Keys se configura el TOKE
 git checkout rama_actual
 ## Cambiar nombre
 git branch -m nuevo_nombre
+## Y publicamos la rama
+git push origin HEAD
+
