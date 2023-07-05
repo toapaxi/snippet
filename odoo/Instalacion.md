@@ -47,30 +47,6 @@ pip install werkzeug
 pip install psycopg2-binary
 
 
-# ARREGLAR ODOO (FileNotFoundError: [Errno 2] No existe el archivo o el directorio:)
-## '/home/muerte/.local/share/Odoo/filestore/conaplas16/2f/2f7028932480cdcb927f83b0165d577669e620fa'
-
-select * from ir_attachment
-WHERE
-store_fname LIKE '%b8f9001425cfd0ef0315797909281b912817643a%'
-
-Confirmamos la existencia de ese registro y lo borramos
-
-delete from ir_attachment
-WHERE
-store_fname LIKE '%b8f9001425cfd0ef0315797909281b912817643a%'
-
-## ELIMINAR MODELOS Y CAMPOS DE LOS MODELOS EN LA BASE
-
-    select * from ir_model where model  like '%transporte.tipo%';
-    
-    select * from ir_model_fields where model_id = '616';
-    
-    delete from ir_model_fields where model_id = '616';
-    
-    delete from ir_model where id = '616';
-
-
 ## BORRAR MODULOS TRUCHOS
 
 delete from public.ir_module_module
