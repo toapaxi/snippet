@@ -6,7 +6,7 @@ Buscar: colocamos el nombre del modelo Ejemplo: hr.payslip
 De aqui tomamos el nombre de la plantilla: hr_payroll_community.report_payslip
 
 Este nombre lo buscamos en el codigo xml y obtendremos algo asi:
-
+'''
 <record id="action_report_payslip" model="ir.actions.report">
             <field name="name">Payslip</field>
             <field name="model">hr.payslip</field>
@@ -16,7 +16,7 @@ Este nombre lo buscamos en el codigo xml y obtendremos algo asi:
             <field name="binding_model_id" ref="model_hr_payslip"/>
             <field name="print_report_name">('Payslip - %s' % (object.employee_id.name))</field>
 </record>
-
+'''
 Copiamos el: record id="action_report_payslip"
 
 donde necesitemos el boton lo crearemos de la sgte manera
