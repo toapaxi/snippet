@@ -22,3 +22,9 @@ CREATE COLLATION [ IF NOT EXISTS ] name (
     [ VERSION = version ]
 )
 CREATE COLLATION [ IF NOT EXISTS ] name FROM existing_collation
+
+### PSQL: Realizar RESTORE de una BD usando archivo.sql
+
+```
+psql -U odoo -d sprint_08 -f dump.sql 
+```
