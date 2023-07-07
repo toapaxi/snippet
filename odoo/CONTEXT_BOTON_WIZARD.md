@@ -20,3 +20,22 @@ class NmHrPayslipEmployees(models.TransientModel):
     date_end = fields.Date(string='Date To')
     struct_id = fields.Many2one('hr.payroll.structure', string='Salary Structure')
 ```
+
+
+## CONTEXT ENVIO DESDE PY
+    def pagos_view(self):
+        pagos_ids = self._get_pagos_conciliados_ids()
+        domain = [('id', 'in', pagos_ids) ]
+        return {
+            'name'     : _('Pagos aplicados'),
+            'domain'   : domain,
+            'res_model': 'account.payment',
+            'type'     : 'ir.actions.act_window',
+            'views': [(self.env.ref('cxp_provisiones.view_account_payment_pagos_tree').id, 'tree'),
+                      (self.env.ref('cxp_provisiones.view_account_payment_proveedor_form').id, 'form')],
+            # 'view_id'  : False,
+            'view_mode': 'tree,form',
+            'limit'    : 80,
+            'context'  : "{'default_FIELD_VIEW': '%s', 'default_FIELD2': '%s'}" % pagos_ids % domain,
+            'context2':  "{'default_corp_hr_tipo_roles_id': corp_hr_tipo_roles_id, 'default_date_start': date_start}"
+        }
