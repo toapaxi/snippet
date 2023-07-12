@@ -86,7 +86,7 @@ Debemos copiar el action al inicio **debemos cambiar el modulo**
 ```
 Por 
 ``` 
-<field name="report_name">**nm_catalogos**.report_payslip</field>
+<field name="report_name">nm_catalogos.report_payslip</field>
 ``` 
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
@@ -94,8 +94,8 @@ Por
         <field name="name">Payslip</field>
         <field name="model">hr.payslip</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">**nm_catalogos**.report_payslip</field>
-        <field name="report_file">**nm_catalogos**.report_payslip</field>
+        <field name="report_name">nm_catalogos.report_payslip</field>
+        <field name="report_file">nm_catalogos.report_payslip</field>
         <field name="binding_model_id" ref="model_hr_payslip"/>
         <field name="print_report_name">('Payslip - %s' % (object.employee_id.name))</field>
     </record>
