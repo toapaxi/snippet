@@ -108,3 +108,18 @@ Por
                         <h2>Pay Slip</h2>
 
 ```
+
+
+Y por ultimo en el PY, tambien se modifica el modulo nuevo
+
+
+```
+   def do_print_nomina(self):
+      for record in self:
+            check_layout = 'nm_catalogos.action_report_payslip'
+
+            report_action = record.env.ref(check_layout, False)
+
+            return report_action.report_action(record)
+
+```
