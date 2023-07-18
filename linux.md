@@ -14,3 +14,6 @@ sudo lsof -i -P -n | grep LISTEN | grep IPv4
 ### Cuando estoy instalando algo y se corta porque me dice que faltan librerias
 Ejecuto lo siguinete, para que instale las librerias faltantes y continue 
 sudo apt-get install -f
+
+### Liberar Memoria 
+sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches'
