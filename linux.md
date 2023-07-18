@@ -16,4 +16,6 @@ Ejecuto lo siguinete, para que instale las librerias faltantes y continue
 sudo apt-get install -f
 
 ### Liberar Memoria 
+```
 sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches'
+```
