@@ -1,9 +1,9 @@
 # CREAR UN REPORTE EN EXCEL
 
 
-Para el ejemplo vamos a crear un reporte excel report_hr_payslip_run (en nm_catalogos, nomina en lotes)
-Crear una carpeta xls
-dentro el archivo report_hr_payslip_run.py donde se hara el reporte
+Para el ejemplo vamos a crear un reporte excel report_hr_payslip_run (en nm_catalogos, nomina en lotes)  
+Crear una carpeta xls  
+dentro el archivo report_hr_payslip_run.py donde se hara el reporte  
 
 ```
 from odoo import models
