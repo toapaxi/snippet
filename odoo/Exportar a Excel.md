@@ -1,13 +1,18 @@
 # CREAR UN REPORTE EN EXCEL
 
+### SE NECESITA EL MODULO cg_estadocuentasexcel 
+agregar en manifest en la seccion depends
 
-Para el ejemplo vamos a crear un reporte excel report_hr_payslip_run (en nm_catalogos, nomina en lotes).  
+### Para el ejemplo vamos a crear un reporte excel report_hr_payslip_run (en nm_catalogos, nomina en lotes).  
 ### Crear una carpeta xls.  <br>
+> NOTA: no olvide el archivo __init__.py  
+> y agregar la carpeta xls en el __init__.py general del modulo
 
 ### Crear el archivo **report_hr_payslip_run.py** donde se hara el reporte:  
  _name = "**report**.hr_payslip_run.excel"
 
-> NOTA: El nombre debe iniciar con **report**
+> NOTA: El nombre debe iniciar con **report**  
+> NOTA2: obj tiene los datos del modelo que se envie en el action
 
 
 ```python
@@ -22,9 +27,6 @@ class ReportHrPayslipRun(models.Model):
     def generate_xlsx_report(self, workbook, data, obj):
         # report_obj = self.env['report.cg_estadodecuentas.cg_reporte_estandar']
         # results = report_obj._get_report_values(obj, data)
-        active_id = self.env.context.get('active_id')
-        if active_id:
-            [run_data] = self.env['hr.payslip.run'].search(active_id)
 
         sheet = workbook.add_worksheet()
 
