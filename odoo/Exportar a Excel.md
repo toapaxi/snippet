@@ -2,15 +2,15 @@
 
 
 Para el ejemplo vamos a crear un reporte excel report_hr_payslip_run (en nm_catalogos, nomina en lotes).  
-Crear una carpeta xls.  <br>
+### Crear una carpeta xls.  <br>
 
-Crear el archivo **report_hr_payslip_run.py** donde se hara el reporte:  
+### Crear el archivo **report_hr_payslip_run.py** donde se hara el reporte:  
  _name = "**report**.hr_payslip_run.excel"
 
 > NOTA: El nombre debe iniciar con **report**
 
 
-```
+```python
 from odoo import models
 import time
 
@@ -84,3 +84,35 @@ class ReportHrPayslipRun(models.Model):
 
 
 ```
+
+### Crear el archivo **report_hr_payslip_run.xml** donde estara el action:  
+
+> Nota:  El nombre es el modelo que necesita
+<br/>
+
+```xml
+<field name="model">hr.payslip.run</field>
+```
+
+> Nota: Colocar el nombre sin el prefijo **report**  ``` <field name="report_name">hr_payslip_run.excel</field>.  ```  
+Debido a que en el Controller le agrega el prefijo **reporte.**  
+Si quiere ver, busque => xlsx = report.with_context(**context)._render_xlsx(docids, data=data)[0]
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_hr_payslip_run_excel" model="ir.actions.report">
+             <field name="name">Reporte de Nominas</field>
+             <field name="model">hr.payslip.run</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">hr_payslip_run.excel</field>
+            <field name="report_file">hr_payslip_run.excel</field>
+             <field name="attachment_use">False</field>
+        </record>
+
+    </data>
+</odoo>
+```
+
+
