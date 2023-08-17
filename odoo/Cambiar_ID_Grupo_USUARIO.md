@@ -2,6 +2,7 @@
 # Cambiar el id de un grupo de usuario
 Si deseamos cambiar el id de un res_group 
 
+```xml
         <record id="grupo_usuario_nm" model="res.groups">
             <field name="name">Usuario de Nominas</field>
             <field name="category_id" ref="nm_security"/>
@@ -10,10 +11,13 @@ Si deseamos cambiar el id de un res_group
             <field name="name">Usuario de Nominas</field>
             <field name="category_id" ref="nm_security"/>
         </record>
+```
         
 ## Debemos cambiarlo en la base de datos
 
 ### Buscar el registro
+
+```sql
         SELECT *
         FROM ir_module_category
         WHERE to_json(name)::text LIKE '%nomina%';
@@ -33,21 +37,27 @@ Si deseamos cambiar el id de un res_group
         where model = 'res.groups'
         and module = 'nm_accesos'
         and name = 'grupo_user_nm'
+```
 
 ### Actualizar el campo name del registro en la tabla ir_model_data
+
+```sql
         begin
         update ir_model_data set name = 'grupo_usuario_nm'
         where model = 'res.groups'
         and res_id = 119
         rollback
         commit 
+```
 
 # DESPUES DEBEMOS MODIFICAR TODAS LAS REFERENCIAS EN EL CODIGO
 BUSCAR: nm_accesos.grupo_user_nm
 Y REEMPLAZAR POR: nm_accesos.grupo_usuario_nm
 
+```
         modified:   corp_hr_catalogos/security/ir.model.access.csv
         modified:   corp_hr_catalogos/views/corp_menu.xml
         modified:   nm_catalogos/security/ir.model.access.csv
         modified:   th_empleados/security/ir.model.access.csv
 
+```
