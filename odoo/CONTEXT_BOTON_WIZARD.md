@@ -3,7 +3,7 @@
 'default_corp_hr_tipo_roles_id': corp_hr_tipo_roles_id
 'defalut_FIELD_RECIBE': FIELD OBJETO DEL BOTON
 
-```
+```xml
             <xpath expr="//button[@name='%(hr_payroll_community.action_hr_payslip_by_employees)d']" position="attributes">
                 <attribute name="context">{'default_corp_hr_tipo_roles_id': corp_hr_tipo_roles_id, 'default_date_start': date_start, 'default_date_end': date_end, 'default_struct_id': struct_id}</attribute>
             </xpath>
@@ -11,7 +11,7 @@
 
 ## EN EL PY DESTINO DEBEN EXISTIR ESOS FIELDS
 
-```
+```python
 class NmHrPayslipEmployees(models.TransientModel):
     _inherit = 'hr.payslip.employees'
 
@@ -23,6 +23,7 @@ class NmHrPayslipEmployees(models.TransientModel):
 
 
 ## CONTEXT ENVIO DESDE PY
+```python
     def pagos_view(self):
         pagos_ids = self._get_pagos_conciliados_ids()
         domain = [('id', 'in', pagos_ids) ]
@@ -39,3 +40,4 @@ class NmHrPayslipEmployees(models.TransientModel):
             'context'  : "{'default_FIELD_VIEW': '%s', 'default_FIELD2': '%s'}" % pagos_ids % domain,
             'context2':  "{'default_corp_hr_tipo_roles_id': corp_hr_tipo_roles_id, 'default_date_start': date_start}"
         }
+```
