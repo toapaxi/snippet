@@ -1,3 +1,5 @@
+# Modificar el nombre a presentar de los modelos
+```python
 class MyModel(models.Model):
     _name = 'my.model'
 
@@ -9,8 +11,9 @@ class MyModel(models.Model):
             name = record.name  # Customize the display name based on your requirements
             result.append((record.id, name))
         return result
-
+```
 Tambien puede ser:
+```python
 @api.depends('name', 'code')
     def name_get(self):
         result = []
@@ -18,3 +21,4 @@ Tambien puede ser:
             name = account.code + ' ' + account.name
             result.append((account.id, name))
         return result
+```
