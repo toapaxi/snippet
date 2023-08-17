@@ -6,7 +6,7 @@ Buscar: colocamos el nombre del modelo Ejemplo: hr.payslip
 De aqui tomamos el nombre de la plantilla: hr_payroll_community.report_payslip
 
 Este nombre lo buscamos en el codigo xml y obtendremos algo asi:
-``` 
+```xml
 <record id="action_report_payslip" model="ir.actions.report">
             <field name="name">Payslip</field>
             <field name="model">hr.payslip</field>
@@ -22,7 +22,7 @@ Copiamos el record id="**action_report_payslip**"
 
 ## CREACION DEL BOTON CON UN ACTION
 donde necesitemos el boton lo crearemos de la sgte manera:
-``` 
+```xml
 <button name="%(**action_report_payslip**)d" string="Generar Reporte" type="action" class="btn-primary"/>
 ```
 
@@ -30,7 +30,7 @@ donde necesitemos el boton lo crearemos de la sgte manera:
 > Esto sirve mas para agregar validaciones
 
 Se debe crear una funcion en el modelo respectivo
-```
+```python
     def do_print_nomina(self):
       for record in self:
             check_layout = 'hr_payroll_community.action_report_payslip'
@@ -41,7 +41,7 @@ Se debe crear una funcion en el modelo respectivo
 ```
 
 y donde necesitemos el boton lo crearemos de la sgte manera:
-``` 
+```xml
  <button string="IMPRIMIR NOMINA" name="do_print_nomina" type="object" class="oe_highlight"/>
 ```
 
@@ -51,7 +51,7 @@ y donde necesitemos el boton lo crearemos de la sgte manera:
 Con el nombre de la plantilla: hr_payroll_community.report_payslip, buscamos el action 
 
 Este nombre lo buscamos en el codigo xml y obtendremos algo asi:
-``` 
+```xml
 <record id="action_report_payslip" model="ir.actions.report">
             <field name="name">Payslip</field>
             <field name="model">hr.payslip</field>
@@ -68,7 +68,7 @@ Encontraremos un archivo XML, en este caso **report_payslip_templates.xml**
 Este archivo se copia en el nuevo modulo
 Inicia asi:
 
-``` 
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 <template id="report_payslip">
@@ -81,13 +81,14 @@ Inicia asi:
 ``` 
 
 Debemos copiar el action al inicio **debemos cambiar el modulo**
-``` 
+```xml
 <field name="report_name">hr_payroll_community.report_payslip</field>
 ```
 Por 
-``` 
+```xml
 <field name="report_name">nm_catalogos.report_payslip</field>
-``` 
+```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="action_report_payslip" model="ir.actions.report">
@@ -113,7 +114,7 @@ Por
 Y por ultimo en el PY, tambien se modifica el modulo nuevo
 
 
-```
+```python
    def do_print_nomina(self):
       for record in self:
             check_layout = 'nm_catalogos.action_report_payslip'
