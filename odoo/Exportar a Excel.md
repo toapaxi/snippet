@@ -1,6 +1,6 @@
 # CREAR UN REPORTE EN EXCEL
 
-### SE NECESITA EL MODULO cg_estadocuentasexcel 
+### SE NECESITA EL MODULO lib_excel 
 agregar en manifest en la seccion depends
 
 ### Para el ejemplo vamos a crear un reporte excel report_hr_payslip_run (en nm_catalogos, nomina en lotes).  
