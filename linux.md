@@ -1,3 +1,7 @@
+### BUSCAR LOS ARCHIVOS LOG PESADOS DE WILDFLY
+
+sudo find / -type f -name "*server*log*" -printf '%s %p\n' | sort -nr | head -30
+
 ### Comprobar los certificados de un sitio web
 
 openssl s_client -showcerts -connect gitlab.armada.mil.ec:443
