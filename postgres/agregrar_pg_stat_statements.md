@@ -1,16 +1,18 @@
 #  CREAR LA EXTENSION EN LA BASE
 
+```sql
 CREATE EXTENSION IF NOT EXISTS pg_stat_statements
     SCHEMA public
     VERSION "1.9";
-
+```
 # HABILITAR EN POSTGRES.CONF
 
-
+```sql
 shared_preload_libraries = 'pg_stat_statements'  # (change requires restart) 
 pg_stat_statements.track = all
+```
 
-
+```sql
 --Consultas Lentas
 SELECT total_exec_time, mean_exec_time, calls, query
 FROM pg_stat_statements
@@ -30,3 +32,5 @@ SELECT query, shared_blks_read, shared_blks_hit, temp_blks_written
 FROM pg_stat_statements
 ORDER BY shared_blks_read DESC
 LIMIT 10;
+```
+```sql
