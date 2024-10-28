@@ -1,5 +1,6 @@
 # VER LAS TABLAS MAS GRANDES
 
+```sql
 SELECT
     table_schema || '.' || table_name AS table_full_name,
     pg_size_pretty(pg_total_relation_size(table_schema || '.' || table_name)) AS total_size,
@@ -12,3 +13,4 @@ WHERE
 ORDER BY
     pg_total_relation_size(table_schema || '.' || table_name) DESC
 LIMIT 10;
+```
