@@ -34,3 +34,12 @@ git branch -m nuevo_nombre
 ## Y publicamos la rama
 git push origin HEAD
 
+# RESPALDAR TODAS LAS RAMAS DE UN PROYECTO EN MI PC
+## Ingresar en la rama
+git checkout rama_actual
+## Respaldar Ramas
+for branch in $(git branch -r | grep -v '\->' | sed 's/origin\///'); do
+  git checkout -b $branch origin/$branch
+done
+
+
