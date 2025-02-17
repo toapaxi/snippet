@@ -10,7 +10,7 @@ SELECT
     query,
     state,
     query_start,
-    applicwrite_uidation_name,
+    application_name,
     backend_start
 FROM pg_stat_activity
 WHERE 
