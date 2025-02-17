@@ -1,5 +1,7 @@
+##  BUSCAR QUERY EXTRAÑOS
 
-SELECT --*,
+```sql
+SELECT 
 	wait_event_type,
 	wait_event,
 	datname,
@@ -12,11 +14,13 @@ SELECT --*,
     backend_start
 FROM pg_stat_activity
 WHERE 
---query like '%SAVEPOINT%'
 wait_event_type like 'Lock'
 or wait_event_type like 'IPC'
+```
 
+##  BLOQUEOS EN LA BASE
 
+```sql
 
 SELECT 
     blocking.pid AS blocking_pid,
@@ -39,3 +43,5 @@ WHERE
     blocked_locks.granted = false
     AND blocked.wait_event_type IN ('Lock', 'IPC')
 ORDER BY blocked.query_start;
+```
+
