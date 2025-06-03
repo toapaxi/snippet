@@ -1,3 +1,6 @@
+### REVISAR ARCHIVOS PESADOS
+sudo find / -type f -size +100M -exec ls -lh {} \; 2>/dev/null | awk '{ print $5, $9 }'
+
 ### BUSCAR LOS ARCHIVOS LOG PESADOS DE WILDFLY
 
 sudo find / -type f -name "*server*log*" -printf '%s %p\n' | sort -nr | head -30
