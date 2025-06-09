@@ -42,4 +42,6 @@ for branch in $(git branch -r | grep -v '\->' | sed 's/origin\///'); do
   git checkout -b $branch origin/$branch
 done
 
+# LISTAR LAS RAMAS POR FECHA
+git for-each-ref --sort=-committerdate refs/heads/ --format="%(committerdate:iso) %(refname:short)"
 
