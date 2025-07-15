@@ -1,4 +1,18 @@
-﻿**Ingreso de usuarios NORMALES**
+# Creacion de un usuario ADMIN para un reino
+Buscar el usuario en el reino que desea
+Ir a Role Mappings
+
+Escoger en Roles de Cliente -> realm-management
+de los roles disponibles escoger: 
+manage-users
+view-users
+manage-realm
+view-realm
+manage-clients
+view-clients
+manage-events
+
+ # **Ingreso de usuarios NORMALES**
 
 <https://key-stg.armada.mil.ec/realms/armada/account/>
 
