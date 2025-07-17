@@ -1,0 +1,14 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: pool1
+  namespace: metallb-system
+spec:
+  addresses:
+    - 10.128.40.7-10.128.40.8  # Cambia este rango a IPs válidas en tu red
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: l2adv
+  namespace: metallb-system
