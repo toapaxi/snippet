@@ -4,7 +4,7 @@
 
 PROYECTO--> CI/CD Settings-->New runner
 
-Dar clic en *Create runner*
+> Dar clic en *Create runner*
 
 <img width="545" height="662" alt="image" src="https://github.com/user-attachments/assets/4d5759d6-dd17-47d8-90b4-15149cb3728a" />
 
@@ -14,7 +14,9 @@ gitlab-runner register  --url https://gitlab.armada.mil.ec  --token glrt-t3_i3FF
 ```
 # Crear el runner en GITLAB-RUNNER
 ## Ingresar en el docker con GITLAB-RUNNER
+```bash
 docker exec -it runner bash
+```
 ## ejecutar la creacion del runner
 ```bash
 gitlab-runner register  --url https://gitlab.armada.mil.ec  --token glrt-t3_i3FFKUEVLz3TFLgZWAyx
